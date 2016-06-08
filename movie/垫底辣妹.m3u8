@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Yun</title>
+<style type="text/css">body,html,div{padding: 0;margin: 0;width:100%;height:100%;}</style>
+</head>
+<body>
+<div id="a1"></div>
+<script type="text/javascript" src="ckplayer/ckplayer.js" charset="utf-8"></script>
+<script type="text/javascript">
+    var ext='m3u8';
+	var purl='/api.php?vid=CMzM4MzEyMA==-yk__2';
+	if(ext=='mp4'){
+	    var flashvars={f:purl,c:0,s:2,p:0,b:1};
+	}else{
+	    var flashvars={f:'/ckplayer/m3u8.swf',a:purl,c:0,p:0,s:4,lv:0};
+	}
+	var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
+	var isiPad = navigator.userAgent.match(/iPad|iPhone|Linux|Android|iPod/i) != null;
+    if (isiPad) {
+        document.getElementById('a1').innerHTML = '<video src="'+purl+'" controls="controls"  width="100%" height="250"></video>'
+	}else{
+	    CKobject.embedSWF('ckplayer/ckplayer.swf','a1','ckplayer_a1','100%','250',flashvars,params);
+	}
+  </script>
+</body>
+</html>
